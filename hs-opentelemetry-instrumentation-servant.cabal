@@ -41,8 +41,12 @@ test-suite hs-opentelemetry-instrumentation-servant-test
     hs-source-dirs:   test
     main-is:          Main.hs
     build-depends:
-        base ^>=4.18.2.1,
-        hs-opentelemetry-instrumentation-servant
+        base < 5,
+        hs-opentelemetry-instrumentation-servant,
+        http-types,
+        servant,
+        text,
+        wai
 
 executable server
     ghc-options:         -O2 -Wall -threaded -fprof-auto -rtsopts "-with-rtsopts=-N"
